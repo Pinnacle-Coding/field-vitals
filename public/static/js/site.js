@@ -11,6 +11,7 @@ function submitToMailingList() {
         data: mailingDict,
         success: function (data) {
             Materialize.toast(data.message, 4000);
+            $("#mailing-list").trigger('reset');
         },
         error: function (data) {
             Materialize.toast(data.message, 4000);
