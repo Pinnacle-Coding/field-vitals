@@ -10,7 +10,7 @@ function submitToMailingList() {
         type: 'POST',
         data: mailingDict,
         success: function (data) {
-            Materialize.toast('Thank you for signing up!', 4000);
+            Materialize.toast(data.message, 4000);
         }
     });
 };
