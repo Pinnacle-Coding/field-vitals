@@ -1,3 +1,16 @@
+
+function populateMailingListStats() {
+    $.ajax({
+        url: '/api/mailing',
+        type: 'GET',
+        success: function (data) {
+            if (data.state === 'success') {
+                $('#mailing-list-stats').innerHTML = '<i>'+data.users.length+' people are interested'+'</i>'
+            }
+        }
+    })
+};
+
 function submitToMailingList() {
     var serializedList = $('#mailing-list').serializeArray();
     var mailingDict = {};
@@ -17,3 +30,5 @@ function submitToMailingList() {
         }
     });
 };
+
+populateMailingListStats();
