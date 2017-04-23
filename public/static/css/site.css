@@ -1,0 +1,41 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+html, body {
+  height: 100%;
+}
+
+#fv-header {
+    background-image: url('/static/img/logo-background.jpg');
+    background-size: cover;
+}
+
+#fv-logo-wrapper {
+    height: 100vh;
+}
+
+#fv-logo {
+    max-width: 50%;
+    height: auto;
+}
+
+#fv-main {
+    padding-top: 3%;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid #4caf50;
+    margin: 1em 0;
+    padding: 0;
+}

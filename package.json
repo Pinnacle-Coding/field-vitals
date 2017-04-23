@@ -1,0 +1,30 @@
+{
+  "name": "field-vitals",
+  "version": "0.0.1",
+  "description": "Field vitals using LoRa technology",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3",
+    "express-session": "1.15.1",
+    "body-parser": "^1.15.1",
+    "mongoose": "^4.5.0",
+    "multer": "1.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://field-vitals.herokuapp.com"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "private": true
+}
