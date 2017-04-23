@@ -7,7 +7,8 @@ module.exports = {
         method: 'POST',
         handler: function(req, done) {
             if (!req.body.email || !req.body.first_name ||  !req.body.last_name) {
-                done(true, {
+                done(null, {
+                    state: 'error',
                     message: 'Required information is missing'
                 });
                 return;
@@ -29,12 +30,14 @@ module.exports = {
                         });
                         user.save(function (err, user) {
                             done(null, {
+                                state: 'success',
                                 message: 'Thank you for signing up!'
                             });
                         });
                     }
                     else {
-                        done(true, {
+                        done(null, {
+                            state: 'error',
                             message: 'You have already signed up'
                         });
                     }

@@ -10,10 +10,9 @@ function submitToMailingList() {
         type: 'POST',
         data: mailingDict,
         success: function (data) {
-            Materialize.toast(data.message, 4000);
-            $("#mailing-list").trigger('reset');
-        },
-        error: function (data) {
+            if (data.state === 'success') {
+                $("#mailing-list").trigger('reset');
+            }
             Materialize.toast(data.message, 4000);
         }
     });
