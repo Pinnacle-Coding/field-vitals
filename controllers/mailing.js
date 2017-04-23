@@ -12,8 +12,7 @@ module.exports = {
                 });
                 return;
             }
-            console.log(req.body);
-            User.findOne({
+            InterestedUser.findOne({
                 email: req.body.email
             }).exec(function (err, user) {
                 if (err) {
