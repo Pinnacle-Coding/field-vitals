@@ -34,7 +34,7 @@ module.exports = {
                         });
                     }
                     else {
-                        done(null, {
+                        done(true, {
                             message: 'You have already signed up'
                         });
                     }
