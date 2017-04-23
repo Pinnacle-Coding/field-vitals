@@ -5,7 +5,7 @@ function populateMailingListStats() {
         type: 'GET',
         success: function (data) {
             if (data.state === 'success') {
-                $('#mailing-list-stats').innerHTML = '<i>'+data.users.length+' people are interested'+'</i>'
+                $('#mailing-list-stats').html('<i>'+data.users.length+' people are interested'+'</i>');
             }
         }
     })
