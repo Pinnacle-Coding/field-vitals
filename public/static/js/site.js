@@ -11,6 +11,9 @@ function submitToMailingList() {
         data: mailingDict,
         success: function (data) {
             Materialize.toast(data.message, 4000);
+        },
+        error: function (data) {
+            Materialize.toast(data.message, 4000);
         }
     });
 };

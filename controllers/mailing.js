@@ -6,11 +6,18 @@ module.exports = {
         path: '/mailing',
         method: 'POST',
         handler: function(req, done) {
+            if (!req.body.email || !req.body.first_name ||  !req.body.last_name) {
+                done(true, {
+                    message: 'Required information is missing'
+                });
+                return;
+            }
+            console.log(req.body);
             User.findOne({
                 email: req.body.email
             }).exec(function (err, user) {
                 if (err) {
-                   done(true, {
+                   done(err, {
                        message: err.message
                    });
                 }
@@ -25,12 +32,12 @@ module.exports = {
                             done(null, {
                                 message: 'Thank you for signing up!'
                             });
-                        })
+                        });
                     }
                     else {
                         done(null, {
-                            message: 'You have already signed up!'
-                        })
+                            message: 'You have already signed up'
+                        });
                     }
                 }
             });
